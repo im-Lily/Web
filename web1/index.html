@@ -4,33 +4,51 @@
     <title>WEB1 - Welcome</title>
     <meta charset="utf-8">
     <!-- css 스타일-->
-    <!-- a tag에 대해서 색상 변경 -->
     <style>
+        body{
+          margin:0;
+        }
         a {
-            color: black;
-            text-decoration: none; 
-        }
-        #activate {
-            color: red;
-        }
-        .saw {
-            color: gray;
+          color:black;
+          text-decoration: none;
         }
         h1 {
-            font-size: 45px;
-            text-align: center;
+          font-size:45px;
+          text-align: center;
+          border-bottom:1px solid gray;
+          margin:0;
+          padding:20px;
         }
-    </style>
+        ol{
+          border-right:1px solid gray;
+          width:100px;
+          margin:0;
+          padding:20px;
+        }
+        #grid{
+          display: grid;
+          grid-template-columns: 150px 1fr;
+        }
+        #grid ol{
+          padding-left:33px;
+        }
+        #grid #article{
+          padding-left:25px;
+        }
+      </style>
 </head>
 <body>
-    <!-- html 정보만을 담고 있음 -->
 <h1><a href="index.html">WEB</a></h1>
-<ol>
-    <li><a href="1.html" class="saw">html</a></li>
-    <li><a href="2.html" class="saw" id="activate">css</a></li>
-    <li><a href="3.html">javascript</a></li>
-</ol>
-<h2>WEB</h2>
-<p>welcome page</p>
+<div id="grid">
+    <ol>
+        <li><a href="1.html" class="saw">html</a></li>
+        <li><a href="2.html" class="saw" id="activate">css</a></li>
+        <li><a href="3.html">javascript</a></li>
+    </ol>
+    <div id="article">
+        <h2>WEB</h2>
+        <p>welcome page</p> 
+    </div>
+</div>
 </body>
 </html>
