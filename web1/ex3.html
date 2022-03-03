@@ -23,12 +23,45 @@
         <h1>
             <a href="index.html">WEB</a>
         </h1>
+        <!-- 자동으로 주간 모드일 때는 야간 모드로, 야간 모드일 때는 주간 모드로 버튼 변경됨 -->
+        <input
+            id="night_day"
+            type="button"
+            value="night"
+            onclick="
+        if (document.querySelector('#night_day').value == 'night') {
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('#night_day').value = 'day';
+        } else {
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            document.querySelector('#night_day').value = 'night';
+        }
+        ">
+
+        <o1>
+            <li>
+                <a href="1.html">HTML</a>
+            </li>
+            <li>
+                <a href="2.html">CSS</a>
+            </li>
+            <li>
+                <a href="3.html">JavaScript</a>
+            </li>
+        </o1>
         <!-- <style> 태그는 html 문법이지만, color: powderblue는 css 코드임 -->
-        <h2 style="background-color: coral; color: powderblue;"><span id="first" class="js">JavaScript란 무엇인가?</span></h2>
+        <h2 style="background-color: coral; color: powderblue;">
+            <span id="first" class="js">JavaScript란 무엇인가?</span></h2>
         <p>
-            <span class="js">JavaScript</span> is a scripting language that enables you to create dynamically
-            updating <span>content</span>, control <span>multimedia</span>, animate <span>images</span>, and pretty much everything
-            else. (Okay, not everything, but it is amazing what you can achieve with a few
-            lines of <span class="js">JavaScript</span> code.)</p>
+            <span class="js">JavaScript</span>
+            is a scripting language that enables you to create dynamically updating
+            <span>content</span>, control
+            <span>multimedia</span>, animate
+            <span>images</span>, and pretty much everything else. (Okay, not everything, but
+            it is amazing what you can achieve with a few lines of
+            <span class="js">JavaScript</span>
+            code.)</p>
     </body>
 </html>
