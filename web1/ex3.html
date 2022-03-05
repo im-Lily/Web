@@ -3,6 +3,45 @@
     <head>
         <title>WEB1 - JavaScript</title>
         <meta charset="utf-8">
+        <script>
+            function LinksSetColor(color) {
+                var alist = document.querySelectorAll('a')
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+            }
+
+            function BodySetColor(color) {
+                document
+                    .querySelector('body')
+                    .style
+                    .color = color;
+            }
+
+            function BodySetBackgroudColor(color) {
+                document
+                    .querySelector('body')
+                    .style
+                    .backgroundColor = color;
+            }
+
+            function nightDayHandler() {
+                var target = document.querySelector("body");
+                if (self.value == 'night') {
+                    BodySetBackgroudColor('black');
+                    BodySetColor('white');
+                    self.value = 'day';
+                    LinksSetColor('powerblue')
+                } else {
+                    backgroundColor('white');
+                    BodySetColor('black');
+                    self.value = 'night';
+                    LinksSetColor('blue');
+                }
+            }
+        </script>
         <style>
             /* 클래스(.) 값이 js인 모든 태그에 font-weight를 bold로 지정하고 싶어 */
             .js {
@@ -24,37 +63,7 @@
             <a href="index.html">WEB</a>
         </h1>
         <!-- 자동으로 주간 모드일 때는 야간 모드로, 야간 모드일 때는 주간 모드로 버튼 변경됨 -->
-        <input
-            type="button"
-            value="night"
-            onclick="
-            var target = document.querySelector('body');
-        // this: 현재 코드가 속해 있는 태그를 가리킴
-        if (this.value == 'night') {
-            target.style.backgroundColor = 'black';
-            target.style.color = 'white';
-            this.value = 'day';
-
-            // 링크색 변경
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < alist.length) {
-                alist[i].style.color = 'powderblue';
-                i = i +1;
-            }
-        } else {
-            target.style.backgroundColor = 'white';
-            target.style.color = 'black';
-            this.value = 'night';
-
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < alist.length) {
-                alist[i].style.color = 'blue';
-                i = i +1;
-            }
-        }
-        ">
+        <input type="button" value="night" onclick="nightDayHandler()" ;=";">
         <o1>
             <li>
                 <a href="1.html">HTML</a>
